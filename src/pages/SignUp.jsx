@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg';
 import visibilityIcon from '../assets/svg/visibilityIcon.svg';
+import OAuth from '../components/OAuth';
 
 // Firebase auth
 import {
@@ -60,7 +61,7 @@ const SignUp = () => {
       const userId = user.uid;
       await setDoc(doc(db, 'users', userId), formDataCopy);
 
-      navigate('/');
+      navigate('/profile');
     } catch (error) {
       toast.error('Something went wrong with registation');
       // console.log(error);
@@ -124,6 +125,7 @@ const SignUp = () => {
         </form>
 
         {/* Googld OAuth */}
+        <OAuth />
 
         <Link to="/sign-in" className="registerLink">
           Sign in Instead
