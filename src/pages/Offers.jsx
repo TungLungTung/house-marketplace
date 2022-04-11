@@ -54,7 +54,7 @@ export default function Offers() {
     };
 
     fetchListings();
-  });
+  }, []);
 
   return (
     <div className="category">

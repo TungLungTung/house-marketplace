@@ -62,7 +62,7 @@ export default function Category() {
         <p className="pageHeader">
           {params.categoryName === 'rent'
             ? 'Places for rent'
-            : 'Places for sale'}
+            : 'Places for sell'}
         </p>
       </header>
 
