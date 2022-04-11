@@ -415,7 +415,7 @@ button {
 .categoryListingImg {
   width: 30%;
   height: 100px;
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
   object-fit: cover;
 }
 @media (min-width: 1024px) {
