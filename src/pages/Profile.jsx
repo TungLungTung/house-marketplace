@@ -37,7 +37,8 @@ const Profile = () => {
       const q = query(
         listingsRef,
         where('userRef', '==', auth.currentUser.uid),
-        orderBy('timestamp', 'desc')
+        orderBy('timestamp', 'desc'),
+        limit(100)
       );
 
       const querySnap = await getDocs(q);
@@ -97,6 +98,10 @@ const Profile = () => {
       setListings(updatedListings);
       toast.success('Successfully deleted');
     }
+  };
+
+  const onEdit = async (listingId) => {
+    return navigate(`/edit-listing/${listingId}`);
   };
 
   return (
@@ -161,6 +166,9 @@ const Profile = () => {
                     id={listing.id}
                     onDelete={() => {
                       onDelete(listing.id);
+                    }}
+                    onEdit={() => {
+                      onEdit(listing.id);
                     }}
                   />
                 );
